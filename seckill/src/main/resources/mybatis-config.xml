@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--获取自增主键-->
+        <setting name="useGeneratedKeys" value="true"/>
+        <!--使用别名替换列名
+            select name as tile from ....
+            name列名 title别名(结果集中的列名) 即 类中字段名
+        -->
+        <setting name="useColumnLabel" value="true"/>
+        <!--下划线命名法的列名和驼峰命名法的字段名自动转换
+          此处使用的是result-type所以查询出来的结果集中(不是表中的)的列名必须和字段名对应
+            如果使用result-map的话可以自定义对应关系
+        -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+</configuration>
