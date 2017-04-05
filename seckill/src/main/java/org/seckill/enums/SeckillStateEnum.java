@@ -25,7 +25,7 @@ public enum  SeckillStateEnum {
     }
     public static SeckillStateEnum stateOf(int index)
     {
-        for(SeckillStateEnum state:values())
+        for(SeckillStateEnum state:values())//values方法API中看不到
         {
             if(state.getState()==index)
             {

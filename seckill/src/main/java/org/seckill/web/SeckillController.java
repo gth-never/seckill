@@ -7,6 +7,7 @@ import org.seckill.entity.Seckill;
 import org.seckill.enums.SeckillStateEnum;
 import org.seckill.exception.RepeatKillException;
 import org.seckill.exception.SeckillCloseException;
+import org.seckill.exception.SeckillException;
 import org.seckill.service.SeckillService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -94,7 +95,7 @@ public class SeckillController {
             SeckillExecution seckillExecution=new SeckillExecution(seckillId, SeckillStateEnum.END);
             return new SeckillResult<SeckillExecution>(true,seckillExecution);
         }
-        catch (Exception e)
+        catch (SeckillException e)
         {
             SeckillExecution seckillExecution=new SeckillExecution(seckillId, SeckillStateEnum.INNER_ERROR);
             return new SeckillResult<SeckillExecution>(true,seckillExecution);
